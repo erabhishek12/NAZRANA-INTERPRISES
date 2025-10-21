@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nazarana Enterprises - Leading Construction Material Supplier in Banka. Cement, Sariya, Sand, Bricks & More. सीमेंट, सरिया, बालू, ईंट - सब कुछ एक जगह।">
+    <meta name="keywords" content="Construction Material Banka, Cement Supplier Amarpur, Sariya Shop Pawai, Building Material Dauna Mor, निर्माण सामग्री">
+    <title>Nazarana Enterprises | निर्माण सामग्री की दुकान - Banka</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Notification Container -->
+    <div id="notificationContainer"></div>
+    
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button id="langBtn" onclick="toggleLanguage()">
+            <i class="fas fa-language"></i> <span id="langText">हिन्दी</span>
+        </button>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/918676037228?text=Hello%20Nazarana%20Enterprises!" class="whatsapp-float" target="_blank" data-en-title="WhatsApp Us" data-hi-title="हमें व्हाट्सएप करें">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Cart Icon -->
+    <div class="cart-icon" onclick="toggleCart()" data-en-title="View Cart" data-hi-title="कार्ट देखें">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="#home" class="logo-link">
+                        <div class="logo-icon">
+                            <img src="logo.png" alt="Nazarana Enterprises Logo">
+                        </div>
+                        <div class="logo-text">
+                            <h1>Nazarana Enterprises</h1>
+                            <p class="tagline" data-en="Your One-Stop Construction Material Shop" data-hi="हर तरह का निर्माण सामग्री – एक ही जगह पर!">Your One-Stop Construction Material Shop</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="nav-links">
+                    <a href="#home" data-en="Home" data-hi="होम">Home</a>
+                    <a href="#products" data-en="Products" data-hi="उत्पाद">Products</a>
+                    <a href="#about" data-en="About" data-hi="हमारे बारे में">About</a>
+                    <a href="#contact" data-en="Contact" data-hi="संपर्क करें">Contact</a>
+                </div>
+                
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" data-en-title="Menu" data-hi-title="मेन्यू">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" onclick="toggleMobileMenu()" data-en-title="Close Menu" data-hi-title="मेन्यू बंद करें">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="#home" onclick="toggleMobileMenu()" data-en="Home" data-hi="होम">Home</a>
+        <a href="#products" onclick="toggleMobileMenu()" data-en="Products" data-hi="उत्पाद">Products</a>
+        <a href="#about" onclick="toggleMobileMenu()" data-en="About" data-hi="हमारे बारे में">About</a>
+        <a href="#contact" onclick="toggleMobileMenu()" data-en="Contact" data-hi="संपर्क करें">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-animation">
+            <div class="floating-element cement-bag">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="floating-element steel-rod">
+                <i class="fas fa-grip-lines-vertical"></i>
+            </div>
+            <div class="floating-element brick">
+                <i class="fas fa-th-large"></i>
+            </div>
+        </div>
+        
+        <div class="container hero-content">
+            <h1 class="hero-title" data-en="Welcome to Nazarana Enterprises" data-hi="नज़राना एंटरप्राइजेज में आपका स्वागत है">Welcome to Nazarana Enterprises</h1>
+            <p class="hero-subtitle" data-en="Best Quality Construction Materials at Best Prices" data-hi="सबसे अच्छी क्वालिटी और सही दाम पर निर्माण सामग्री">Best Quality Construction Materials at Best Prices</p>
+            
+            <div class="hero-info">
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span data-en="Dauna Mor, Pawai, Amarpur, Banka" data-hi="दौना मोड़, पवई, अमरपुर, बांका">Dauna Mor, Pawai, Amarpur, Banka</span>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+918676037228">+91 8676037228</a>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-clock"></i>
+                    <span data-en="Open 24×7" data-hi="24×7 खुला">Open 24×7</span>
+                </div>
+            </div>
+            
+            <div class="hero-buttons">
+                <a href="#products" class="btn btn-primary" data-en="Shop Now" data-hi="अभी खरीदें">Shop Now</a>
+                <a href="tel:+918676037228" class="btn btn-secondary" data-en="Call Us" data-hi="कॉल करें">Call Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offer Banner -->
+    <div class="offer-banner">
+        <div class="container">
+            <i class="fas fa-gift"></i>
+            <span data-en="🎁 Special Offer: Get 1 Free Gift on Every 1 Ton Steel Purchase!" data-hi="🎁 विशेष ऑफर: हर 1 टन स्टील खरीद पर 1 मुफ्त उपहार पाएं!">🎁 Special Offer: Get 1 Free Gift on Every 1 Ton Steel Purchase!</span>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title" data-en="Our Products" data-hi="हमारे उत्पाद">Our Products</h2>
+            <p class="section-subtitle" data-en="Premium Construction Materials for Your Dream Project" data-hi="आपके सपनों की परियोजना के लिए प्रीमियम निर्माण सामग्री">Premium Construction Materials for Your Dream Project</p>
+            
+            <!-- Category Filter -->
+            <div class="category-filter">
+                <button class="filter-btn active" onclick="filterProducts('all', this)" data-en="All Products" data-hi="सभी उत्पाद">All Products</button>
+                <button class="filter-btn" onclick="filterProducts('cement', this)" data-en="Cement" data-hi="सीमेंट">Cement</button>
+                <button class="filter-btn" onclick="filterProducts('sariya', this)" data-en="Steel Rods" data-hi="सरिया">Steel Rods</button>
+                <button class="filter-btn" onclick="filterProducts('charri', this)" data-en="Charri" data-hi="चरी">Charri</button>
+                <button class="filter-btn" onclick="filterProducts('bricks', this)" data-en="Bricks" data-hi="ईंट">Bricks</button>
+                <button class="filter-btn" onclick="filterProducts('others', this)" data-en="Others" data-hi="अन्य">Others</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600" alt="Construction Materials">
+                    <div class="about-badge">
+                        <i class="fas fa-award"></i>
+                        <span data-en="Trusted Since Years" data-hi="वर्षों से विश्वसनीय">Trusted Since Years</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2 data-en="About Nazarana Enterprises" data-hi="नज़राना एंटरप्राइजेज के बारे में">About Nazarana Enterprises</h2>
+                    <p data-en="We are a leading supplier of premium construction materials in Banka, Bihar. With years of experience and a commitment to quality, we serve builders, contractors, and homeowners with the best materials at competitive prices." data-hi="हम बांका, बिहार में प्रीमियम निर्माण सामग्री के अग्रणी आपूर्तिकर्ता हैं। वर्षों के अनुभव और गुणवत्ता के प्रति प्रतिबद्धता के साथ, हम बिल्डरों, ठेकेदारों और गृहस्वामियों को प्रतिस्पर्धी कीमतों पर सर्वोत्तम सामग्री प्रदान करते हैं।">We are a leading supplier of premium construction materials in Banka, Bihar. With years of experience and a commitment to quality, we serve builders, contractors, and homeowners with the best materials at competitive prices.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span data-en="Genuine Products" data-hi="असली उत्पाद">Genuine Products</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span data-en="Best Prices" data-hi="सर्वोत्तम मूल्य">Best Prices</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span data-en="24/7 Service" data-hi="24/7 सेवा">24/7 Service</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span data-en="Free Delivery*" data-hi="मुफ्त डिलीवरी*">Free Delivery*</span>
+                        </div>
+                    </div>
+                    
+                    <blockquote class="promise">
+                        <i class="fas fa-quote-left"></i>
+                        <p data-en="Our Promise – Best Quality Construction Materials at Fair Prices" data-hi="हमारा वादा – सबसे अच्छी क्वालिटी और सही दाम पर निर्माण सामग्री">Our Promise – Best Quality Construction Materials at Fair Prices</p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title" data-en="What Our Customers Say" data-hi="हमारे ग्राहक क्या कहते हैं">What Our Customers Say</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p data-en="Best quality cement and steel in Banka. Very helpful staff and reasonable prices!" data-hi="बांका में सबसे अच्छी गुणवत्ता वाला सीमेंट और स्टील। बहुत मददगार स्टाफ और उचित कीमतें!">"Best quality cement and steel in Banka. Very helpful staff and reasonable prices!"</p>
+                    <h4 data-en-name="Rajesh Kumar">Rajesh Kumar</h4>
+                    <span data-en="Builder" data-hi="बिल्डर">Builder</span>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p data-en="I've been buying from Nazarana Enterprises for 5 years. Always genuine products and timely delivery." data-hi="मैं 5 साल से नज़राना एंटरप्राइजेज से खरीद रहा हूं। हमेशा असली उत्पाद और समय पर डिलीवरी।">"I've been buying from Nazarana Enterprises for 5 years. Always genuine products and timely delivery."</p>
+                    <h4 data-en-name="Amit Singh">Amit Singh</h4>
+                    <span data-en="Contractor" data-hi="ठेकेदार">Contractor</span>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p data-en="Great service! They helped me choose the right materials for my house construction. Highly recommend!" data-hi="बढ़िया सेवा! उन्होंने मेरे घर के निर्माण के लिए सही सामग्री चुनने में मेरी मदद की। अत्यधिक अनुशंसित!">"Great service! They helped me choose the right materials for my house construction. Highly recommend!"</p>
+                    <h4 data-en-name="Priya Sharma">Priya Sharma</h4>
+                    <span data-en="Homeowner" data-hi="गृहस्वामी">Homeowner</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title" data-en="Contact Us" data-hi="संपर्क करें">Contact Us</h2>
+            <p class="section-subtitle" data-en="Get in Touch for Orders and Inquiries" data-hi="ऑर्डर और पूछताछ के लिए संपर्क करें">Get in Touch for Orders and Inquiries</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3 data-en="Our Location" data-hi="हमारा स्थान">Our Location</h3>
+                        <p data-en="Dauna Mor, Pawai, Amarpur, Banka, Bihar" data-hi="दौना मोड़, पवई, अमरपुर, बांका, बिहार">Dauna Mor, Pawai, Amarpur, Banka, Bihar</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <i class="fas fa-phone"></i>
+                        <h3 data-en="Call Us" data-hi="फोन करें">Call Us</h3>
+                        <a href="tel:+918676037228">+91 8676037228</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <i class="fab fa-whatsapp"></i>
+                        <h3 data-en="WhatsApp" data-hi="व्हाट्सएप">WhatsApp</h3>
+                        <a href="https://wa.me/918676037228" target="_blank">+91 8676037228</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <i class="fas fa-clock"></i>
+                        <h3 data-en="Working Hours" data-hi="खुलने का समय">Working Hours</h3>
+                        <p data-en="Open 24 Hours, 7 Days a Week" data-hi="सप्ताह के 7 दिन, 24 घंटे खुला">Open 24 Hours, 7 Days a Week</p>
+                    </div>
+                </div>
+                
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3626.123456789!2d86.7!3d24.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDU0JzAwLjAiTiA4NsKwNDInMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="400" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3 data-en="Shopping Cart" data-hi="शॉपिंग कार्ट">Shopping Cart</h3>
+            <button onclick="toggleCart()" class="close-cart" data-en-title="Close Cart" data-hi-title="कार्ट बंद करें">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart" data-en="Your cart is empty" data-hi="आपकी कार्ट खाली है">Your cart is empty</p>
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span data-en="Total:" data-hi="कुल:">Total:</span>
+                <span id="cartTotal">₹0</span>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="showCheckout()" data-en="Proceed to Checkout" data-hi="चेकआउट के लिए आगे बढ़ें" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content checkout-modal">
+            <button class="close-modal" onclick="closeCheckout()" data-en-title="Close Checkout" data-hi-title="चेकआउट बंद करें">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <h2 data-en="Complete Your Order" data-hi="अपना ऑर्डर पूरा करें">Complete Your Order</h2>
+            
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label data-en="Full Name" data-hi="पूरा नाम" for="customerName">Full Name</label>
+                    <input type="text" id="customerName" required placeholder="Enter your name">
+                </div>
+                
+                <div class="form-group">
+                    <label data-en="Phone Number" data-hi="फोन नंबर" for="customerPhone">Phone Number</label>
+                    <input type="tel" id="customerPhone" required placeholder="+91 XXXXX XXXXX" pattern="[0-9]{10}">
+                </div>
+                
+                <div class="form-group">
+                    <label data-en="Delivery Address" data-hi="डिलीवरी का पता" for="customerAddress">Delivery Address</label>
+                    <textarea id="customerAddress" required placeholder="Enter complete address"></textarea>
+                </div>
+                
+                <div class="order-summary">
+                    <h3 data-en="Order Summary" data-hi="ऑर्डर सारांश">Order Summary</h3>
+                    <div id="orderSummary"></div>
+                    <div class="summary-total">
+                        <strong data-en="Total Amount:" data-hi="कुल राशि:">Total Amount:</strong>
+                        <strong id="summaryTotal">₹0</strong>
+                    </div>
+                </div>
+                
+                <div class="payment-options">
+                    <h3 data-en="Payment Method" data-hi="भुगतान का तरीका">Payment Method</h3>
+                    <label>
+                        <input type="radio" name="payment" value="cod" checked>
+                        <span data-en="Cash on Delivery" data-hi="डिलीवरी पर भुगतान">Cash on Delivery</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="payment" value="online">
+                        <span data-en="Online Payment (UPI)" data-hi="ऑनलाइन भुगतान (UPI)">Online Payment (UPI)</span>
+                    </label>
+                </div>
+                
+                <div class="upi-section" id="upiSection" style="display: none;">
+                    <h4 data-en="Pay Using UPI" data-hi="UPI से भुगतान करें">Pay Using UPI</h4>
+                    <div class="upi-details">
+                        <div class="qr-code">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=nazaranaenterprises@paytm&pn=Nazarana%20Enterprises&cu=INR" alt="UPI QR Code">
+                        </div>
+                        <div class="upi-info">
+                            <p><strong>UPI ID:</strong> <span id="upiId">nazaranaenterprises@paytm</span></p>
+                            <p><strong data-en="Or Pay to:" data-hi="या भुगतान करें:">Or Pay to:</strong> <span id="upiPhone">+91 8676037228</span></p>
+                            <p class="upi-note" data-en="Scan QR code or use UPI ID to pay" data-hi="भुगतान के लिए QR कोड स्कैन करें या UPI ID का उपयोग करें">Scan QR code or use UPI ID to pay</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Payment Reference Number (Mandatory for Online Payment)" data-hi="भुगतान संदर्भ संख्या (ऑनलाइन भुगतान के लिए अनिवार्य)" for="paymentRef">Payment Reference Number</label>
+                        <input type="text" id="paymentRef" placeholder="Enter transaction ID (e.g., UPI Ref No.)">
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block" id="confirmOrderBtn" data-en="Confirm Order on WhatsApp" data-hi="व्हाट्सएप पर ऑर्डर की पुष्टि करें">Confirm Order on WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Nazarana Enterprises</h3>
+                    <p data-en="Your trusted partner for all construction material needs." data-hi="सभी निर्माण सामग्री की जरूरतों के लिए आपका विश्वसनीय साथी।">Your trusted partner for all construction material needs.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/918676037228" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="tel:+918676037228"><i class="fas fa-phone"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-en="Quick Links" data-hi="त्वरित लिंक">Quick Links</h4>
+                    <ul>
+                        <li><a href="#home" data-en="Home" data-hi="होम">Home</a></li>
+                        <li><a href="#products" data-en="Products" data-hi="उत्पाद">Products</a></li>
+                        <li><a href="#about" data-en="About Us" data-hi="हमारे बारे में">About Us</a></li>
+                        <li><a href="#contact" data-en="Contact" data-hi="संपर्क करें">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-en="Products" data-hi="उत्पाद">Products</h4>
+                    <ul>
+                        <li><a href="#products" data-en="Cement" data-hi="सीमेंट">Cement</a></li>
+                        <li><a href="#products" data-en="Steel Rods (Sariya)" data-hi="सरिया">Steel Rods (Sariya)</a></li>
+                        <li><a href="#products" data-en="Sand & Charri" data-hi="रेत और चरी">Sand & Charri</a></li>
+                        <li><a href="#products" data-en="Bricks" data-hi="ईंट">Bricks</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-en="Contact Info" data-hi="संपर्क जानकारी">Contact Info</h4>
+                    <ul>
+                        <li data-en="Dauna Mor, Pawai, Amarpur, Banka" data-hi="दौना मोड़, पवई, अमरपुर, बांका"><i class="fas fa-map-marker-alt"></i> Dauna Mor, Pawai, Amarpur, Banka</li>
+                        <li><i class="fas fa-phone"></i> +91 8676037228</li>
+                        <li data-en="24×7 Open" data-hi="24×7 खुला"><i class="fas fa-clock"></i> 24×7 Open</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nazarana Enterprises. <span data-en="All Rights Reserved." data-hi="सर्वाधिकार सुरक्षित।">All Rights Reserved.</span></p>
+                <p data-en="DESIGEND WITH ABHISHEK KUMAR ❤️" data-hi="बेहतर निर्माण के लिए ❤️ से डिज़ाइन किया गया">Designed with ❤️ for Better Construction</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="closeAll()"></div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
