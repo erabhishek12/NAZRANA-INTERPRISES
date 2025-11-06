@@ -3,415 +3,2806 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nazarana Enterprises - Leading Construction Material Supplier in Banka. Cement, Sariya, Sand, Bricks & More. सीमेंट, सरिया, बालू, ईंट - सब कुछ एक जगह।">
+    <title>Nazarana Enterprises | निर्माण सामग्री की दुकान – Banka</title>
+    <meta name="description" content="Nazarana Enterprises – Leading construction material supplier in Banka. Cement, Sariya, Sand, Bricks & more. सीमेंट, सरिया, बालू, ईंट – सब कुछ एक जगह।">
     <meta name="keywords" content="Construction Material Banka, Cement Supplier Amarpur, Sariya Shop Pawai, Building Material Dauna Mor, निर्माण सामग्री">
-    <title>Nazarana Enterprises | निर्माण सामग्री की दुकान - Banka</title>
+    <link rel="icon" href="logo.png" type="image/png">
     
-    <!-- Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Light Mode Colors */
+            --primary: #FF6B35;
+            --primary-light: #FF8C5A;
+            --primary-dark: #E55A2B;
+            --secondary: #004E89;
+            --secondary-light: #006AB5;
+            --accent: #FFD23F;
+            --accent-dark: #FFC933;
+            --success: #10B981;
+            --danger: #EF4444;
+            --warning: #F59E0B;
+            --info: #3B82F6;
+            
+            /* Neutral Colors */
+            --dark: #1A1A2E;
+            --gray-900: #111827;
+            --gray-800: #1F2937;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-500: #6B7280;
+            --gray-400: #9CA3AF;
+            --gray-300: #D1D5DB;
+            --gray-200: #E5E7EB;
+            --gray-100: #F3F4F6;
+            --white: #FFFFFF;
+            
+            /* Background */
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F9FAFB;
+            --bg-tertiary: #F3F4F6;
+            
+            /* Text */
+            --text-primary: #111827;
+            --text-secondary: #6B7280;
+            --text-tertiary: #9CA3AF;
+            
+            /* Border */
+            --border-color: #E5E7EB;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            
+            /* Glassmorphism */
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            
+            /* Transitions */
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: all 0.15s ease;
+        }
+
+        /* Dark Mode Variables */
+        [data-theme="dark"] {
+            --primary: #FF8C5A;
+            --secondary: #006AB5;
+            --accent: #FFC933;
+            
+            --bg-primary: #0F0F0F;
+            --bg-secondary: #1A1A1A;
+            --bg-tertiary: #262626;
+            
+            --text-primary: #F9FAFB;
+            --text-secondary: #D1D5DB;
+            --text-tertiary: #9CA3AF;
+            
+            --border-color: #374151;
+            
+            --glass-bg: rgba(26, 26, 26, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            overflow-x: hidden;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-primary);
+        }
+
+        h1 { font-size: clamp(2rem, 5vw, 3rem); }
+        h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            z-index: 9999;
+            transform-origin: left;
+            transition: var(--transition-fast);
+        }
+
+        /* Header */
+        .header {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .header-top {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: var(--white);
+            padding: 0.75rem 0;
+            font-size: 0.875rem;
+        }
+
+        .header-top .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .header-top a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .header-top a:hover {
+            color: var(--accent);
+        }
+
+        .header-main {
+            padding: 1rem 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            height: 55px;
+            width: auto;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        .brand-text h1 {
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .brand-text p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        /* Search Bar */
+        .search-container {
+            flex: 1;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 0.875rem 3rem 0.875rem 3rem;
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            font-size: 1rem;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            transition: var(--transition);
+        }
+
+        .search-bar:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+        }
+
+        .clear-search {
+            position: absolute;
+            right: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1.25rem;
+            display: none;
+        }
+
+        .clear-search.visible {
+            display: block;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.938rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav a:hover::after,
+        .nav a.active::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        /* Icon Buttons */
+        .icon-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            position: relative;
+        }
+
+        .icon-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .icon-btn .badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: var(--danger);
+            color: var(--white);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border: 2px solid var(--bg-primary);
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .theme-toggle:hover {
+            background: var(--accent);
+            transform: rotate(15deg);
+        }
+
+        .lang-toggle {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 25px;
+            padding: 0.5rem 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text-primary);
+        }
+
+        .lang-toggle:hover {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .cart-btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .cart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cart-count {
+            background: var(--accent);
+            color: var(--dark);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-primary);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Hero Section - Glassmorphism */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            padding: 5rem 0;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero h1 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .info-pills {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .pill {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            padding: 0.875rem 1.75rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .pill:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: var(--dark);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--secondary);
+            transform: translateY(-4px);
+        }
+
+        /* Offer Banner - Animated Gradient */
+        .offer-banner {
+            background: linear-gradient(270deg, #FFD23F, #FF6B35, #FFD23F);
+            background-size: 400% 400%;
+            animation: gradientShift 3s ease infinite;
+            color: var(--dark);
+            text-align: center;
+            padding: 1.25rem;
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Products Section */
+        .products {
+            padding: 5rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+        }
+
+        /* Product Controls */
+        .product-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Category Filters */
+        .category-filters {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text-primary);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        /* Sort Dropdown */
+        .sort-dropdown {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .sort-dropdown:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Product Card - Modern Glassmorphism */
+        .product-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+            box-shadow: var(--shadow);
+        }
+
+        .product-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: var(--dark);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            z-index: 2;
+            box-shadow: var(--shadow);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .product-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+            background: var(--bg-tertiary);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            opacity: 0;
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .quick-actions {
+            display: flex;
+            gap: 0.5rem;
+            width: 100%;
+        }
+
+        .quick-btn {
+            flex: 1;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--dark);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.875rem;
+        }
+
+        .quick-btn:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-category {
+            font-size: 0.813rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-name {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stars {
+            color: var(--accent);
+            font-size: 0.875rem;
+        }
+
+        .rating-count {
+            color: var(--text-secondary);
+            font-size: 0.813rem;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .product-price-wrapper {
+            flex: 1;
+        }
+
+        .product-price {
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .product-unit {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .add-to-cart {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            border: none;
+            padding: 0.875rem 1.75rem;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            white-space: nowrap;
+        }
+
+        .add-to-cart:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .add-to-cart:active {
+            transform: scale(0.95);
+        }
+
+        /* Wishlist/Heart Icon */
+        .wishlist-btn {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            transition: var(--transition);
+            z-index: 2;
+        }
+
+        .wishlist-btn:hover {
+            transform: scale(1.1);
+            background: var(--danger);
+            color: var(--white);
+        }
+
+        .wishlist-btn.active {
+            background: var(--danger);
+            color: var(--white);
+        }
+
+        /* Floating Tools */
+        .floating-tools {
+            position: fixed;
+            bottom: 100px;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 997;
+        }
+
+        .floating-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .floating-btn:hover {
+            transform: translateY(-4px) scale(1.1);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .scroll-top {
+            background: linear-gradient(135deg, var(--secondary), var(--info));
+        }
+
+        /* Calculator Modal */
+        .calculator-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 1002;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .calculator-modal.active {
+            display: flex;
+        }
+
+        .calculator-content {
+            background: var(--bg-primary);
+            border-radius: 20px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .calculator-header {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: 20px 20px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .calculator-close {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .calculator-body {
+            padding: 2rem;
+        }
+
+        .calc-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .calc-tab {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            background: none;
+            color: var(--text-secondary);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .calc-tab.active {
+            color: var(--primary);
+        }
+
+        .calc-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .calc-form {
+            display: none;
+        }
+
+        .calc-form.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 1rem;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+        }
+
+        .calc-result {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 1.5rem;
+            display: none;
+        }
+
+        .calc-result.active {
+            display: block;
+        }
+
+        .calc-result h3 {
+            color: var(--white);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .calc-result-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 1rem 0;
+        }
+
+        /* Cart Drawer */
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: -450px;
+            width: 450px;
+            max-width: 90vw;
+            height: 100vh;
+            background: var(--bg-primary);
+            box-shadow: var(--shadow-xl);
+            z-index: 1001;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-drawer.active {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-close {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .cart-item:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .cart-item-image {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .cart-item-price {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+
+        .cart-item-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+        }
+
+        .qty-btn {
+            width: 32px;
+            height: 32px;
+            border: 2px solid var(--border-color);
+            background: var(--bg-primary);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: var(--transition);
+            color: var(--text-primary);
+        }
+
+        .qty-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .qty-display {
+            font-weight: 700;
+            min-width: 40px;
+            text-align: center;
+            font-size: 1.125rem;
+        }
+
+        .remove-item {
+            background: var(--danger);
+            color: var(--white);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-left: auto;
+            transition: var(--transition);
+        }
+
+        .remove-item:hover {
+            background: #DC2626;
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: 4rem 1rem;
+            color: var(--text-secondary);
+        }
+
+        .cart-empty-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+
+        .cart-footer {
+            border-top: 2px solid var(--border-color);
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+        }
+
+        .promo-code {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .promo-input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .promo-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--secondary);
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .promo-btn:hover {
+            background: var(--secondary-light);
+        }
+
+        .cart-summary {
+            margin-bottom: 1.5rem;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .summary-row.total {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            border-top: 2px solid var(--border-color);
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: var(--white);
+            border: none;
+            padding: 1.25rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .checkout-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .checkout-btn:disabled {
+            background: var(--gray-400);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Checkout Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(5px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1002;
+            padding: 1rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--bg-primary);
+            border-radius: 20px;
+            max-width: 550px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: var(--white);
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-option {
+            border: 2px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            background: var(--bg-secondary);
+        }
+
+        .payment-option:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .payment-option input[type="radio"] {
+            display: none;
+        }
+
+        .payment-option.selected {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(0, 78, 137, 0.1));
+        }
+
+        .payment-option label {
+            cursor: pointer;
+            font-weight: 600;
+            display: block;
+            color: var(--text-primary);
+        }
+
+        .payment-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .upi-details {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1rem;
+            text-align: center;
+            display: none;
+        }
+
+        .upi-details.active {
+            display: block;
+        }
+
+        .upi-qr {
+            width: 200px;
+            height: 200px;
+            margin: 1rem auto;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: var(--shadow);
+        }
+
+        .upi-id {
+            font-weight: 700;
+            color: var(--secondary);
+            background: var(--bg-primary);
+            padding: 1rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.125rem;
+        }
+
+        .upi-link {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 1rem;
+            transition: var(--transition);
+        }
+
+        .upi-link:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .submit-order {
+            width: 100%;
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: var(--white);
+            border: none;
+            padding: 1.25rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 1.5rem;
+        }
+
+        .submit-order:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #25D366, #20BA5A);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 2.25rem;
+            text-decoration: none;
+            box-shadow: var(--shadow-xl);
+            z-index: 998;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0.2);
+            }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.15);
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--dark);
+            color: var(--white);
+            padding: 1.25rem 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-xl);
+            z-index: 1003;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 600;
+        }
+
+        .toast.show {
+            bottom: 2rem;
+        }
+
+        .toast.success {
+            background: linear-gradient(135deg, var(--success), #059669);
+        }
+
+        .toast.error {
+            background: linear-gradient(135deg, var(--danger), #DC2626);
+        }
+
+        .toast.warning {
+            background: linear-gradient(135deg, var(--warning), #D97706);
+        }
+
+        .toast-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 4rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            text-decoration: none;
+            color: var(--white);
+            font-size: 1.25rem;
+        }
+
+        .social-icon:hover {
+            background: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Mobile Bottom Navigation */
+        .mobile-bottom-nav {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-top: 1px solid var(--glass-border);
+            padding: 0.75rem 0;
+            z-index: 996;
+            box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-bottom-nav nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .mobile-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .mobile-nav-item.active,
+        .mobile-nav-item:hover {
+            color: var(--primary);
+        }
+
+        .mobile-nav-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(3px);
+            z-index: 999;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .search-container {
+                order: 4;
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3rem 0;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mobile-bottom-nav {
+                display: block;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .whatsapp-float {
+                width: 56px;
+                height: 56px;
+                font-size: 1.75rem;
+                bottom: 80px;
+            }
+
+            .floating-tools {
+                bottom: 150px;
+                right: 1rem;
+            }
+
+            .floating-btn {
+                width: 48px;
+                height: 48px;
+                font-size: 1.25rem;
+            }
+
+            body {
+                padding-bottom: 60px;
+            }
+        }
+
+        /* Loading Skeleton */
+        .skeleton {
+            background: linear-gradient(90deg, var(--bg-tertiary) 25%, var(--bg-secondary) 50%, var(--bg-tertiary) 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 12px;
+        }
+
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        .skeleton-card {
+            height: 400px;
+        }
+
+        /* Print Styles */
+        @media print {
+            .header,
+            .hero,
+            .offer-banner,
+            .category-filters,
+            .whatsapp-float,
+            .floating-tools,
+            .mobile-bottom-nav,
+            .footer {
+                display: none;
+            }
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none !important;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-1 { margin-top: 0.5rem; }
+        .mt-2 { margin-top: 1rem; }
+        .mt-3 { margin-top: 1.5rem; }
+        .mb-1 { margin-bottom: 0.5rem; }
+        .mb-2 { margin-bottom: 1rem; }
+        .mb-3 { margin-bottom: 1.5rem; }
+    </style>
 </head>
 <body>
-    
-    <!-- Notification Container -->
-    <div id="notificationContainer"></div>
-    
-    <!-- Language Toggle -->
-    <div class="lang-toggle">
-        <button id="langBtn" onclick="toggleLanguage()">
-            <i class="fas fa-language"></i> <span id="langText">हिन्दी</span>
-        </button>
-    </div>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/918676037228?text=Hello%20Nazarana%20Enterprises!" class="whatsapp-float" target="_blank" data-en-title="WhatsApp Us" data-hi-title="हमें व्हाट्सएप करें">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Cart Icon -->
-    <div class="cart-icon" onclick="toggleCart()" data-en-title="View Cart" data-hi-title="कार्ट देखें">
-        <i class="fas fa-shopping-cart"></i>
-        <span class="cart-count" id="cartCount">0</span>
-    </div>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
     <!-- Header -->
-    <header class="header">
-        <nav class="navbar">
+    <header class="header" id="header">
+        <div class="header-top">
             <div class="container">
-                <div class="logo">
-                    <a href="#home" class="logo-link">
-                        <div class="logo-icon">
-                            <img src="logo.png" alt="Nazarana Enterprises Logo">
-                        </div>
-                        <div class="logo-text">
-                            <h1>Nazarana Enterprises</h1>
-                            <p class="tagline" data-en="Your One-Stop Construction Material Shop" data-hi="हर तरह का निर्माण सामग्री – एक ही जगह पर!">Your One-Stop Construction Material Shop</p>
-                        </div>
-                    </a>
+                <div>
+                    <span data-en="📍 Dauna Mor, Pawai, Amarpur, Banka, Bihar" data-hi="📍 दौना मोड़, पवई, अमरपुर, बांका, बिहार">📍 Dauna Mor, Pawai, Amarpur, Banka, Bihar</span>
                 </div>
-                
-                <div class="nav-links">
-                    <a href="#home" data-en="Home" data-hi="होम">Home</a>
-                    <a href="#products" data-en="Products" data-hi="उत्पाद">Products</a>
-                    <a href="#about" data-en="About" data-hi="हमारे बारे में">About</a>
-                    <a href="#contact" data-en="Contact" data-hi="संपर्क करें">Contact</a>
-                </div>
-                
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" data-en-title="Menu" data-hi-title="मेन्यू">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="close-menu" onclick="toggleMobileMenu()" data-en-title="Close Menu" data-hi-title="मेन्यू बंद करें">
-            <i class="fas fa-times"></i>
-        </button>
-        <a href="#home" onclick="toggleMobileMenu()" data-en="Home" data-hi="होम">Home</a>
-        <a href="#products" onclick="toggleMobileMenu()" data-en="Products" data-hi="उत्पाद">Products</a>
-        <a href="#about" onclick="toggleMobileMenu()" data-en="About" data-hi="हमारे बारे में">About</a>
-        <a href="#contact" onclick="toggleMobileMenu()" data-en="Contact" data-hi="संपर्क करें">Contact</a>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-animation">
-            <div class="floating-element cement-bag">
-                <i class="fas fa-cube"></i>
-            </div>
-            <div class="floating-element steel-rod">
-                <i class="fas fa-grip-lines-vertical"></i>
-            </div>
-            <div class="floating-element brick">
-                <i class="fas fa-th-large"></i>
-            </div>
-        </div>
-        
-        <div class="container hero-content">
-            <h1 class="hero-title" data-en="Welcome to Nazarana Enterprises" data-hi="नज़राना एंटरप्राइजेज में आपका स्वागत है">Welcome to Nazarana Enterprises</h1>
-            <p class="hero-subtitle" data-en="Best Quality Construction Materials at Best Prices" data-hi="सबसे अच्छी क्वालिटी और सही दाम पर निर्माण सामग्री">Best Quality Construction Materials at Best Prices</p>
-            
-            <div class="hero-info">
-                <div class="info-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span data-en="Dauna Mor, Pawai, Amarpur, Banka" data-hi="दौना मोड़, पवई, अमरपुर, बांका">Dauna Mor, Pawai, Amarpur, Banka</span>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:+918676037228">+91 8676037228</a>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-clock"></i>
+                <div>
+                    <a href="tel:+918676037228">📞 +91 8676037228</a>
+                    <span style="margin: 0 1rem;">|</span>
                     <span data-en="Open 24×7" data-hi="24×7 खुला">Open 24×7</span>
                 </div>
             </div>
-            
-            <div class="hero-buttons">
-                <a href="#products" class="btn btn-primary" data-en="Shop Now" data-hi="अभी खरीदें">Shop Now</a>
-                <a href="tel:+918676037228" class="btn btn-secondary" data-en="Call Us" data-hi="कॉल करें">Call Us</a>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo-wrapper">
+                        <img src="logo.png" alt="Nazarana Enterprises" class="logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22150%22 height=%2255%22%3E%3Crect fill=%22%23FF6B35%22 width=%22150%22 height=%2255%22 rx=%2210%22/%3E%3Ctext x=%2275%22 y=%2235%22 font-size=%2228%22 fill=%22white%22 text-anchor=%22middle%22 font-weight=%22bold%22 font-family=%22Arial%22%3ENE%3C/text%3E%3C/svg%3E'">
+                        <div class="brand-text">
+                            <h1>Nazarana Enterprises</h1>
+                            <p data-en="Your One-Stop Construction Material Shop" data-hi="हर तरह का निर्माण सामग्री – एक ही जगह पर!">Your One-Stop Construction Material Shop</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Search Bar -->
+                    <div class="search-container">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" class="search-bar" id="searchBar" placeholder="Search products..." data-placeholder-en="Search products..." data-placeholder-hi="उत्पाद खोजें...">
+                        <button class="clear-search" id="clearSearch">✕</button>
+                    </div>
+
+                    <nav class="nav">
+                        <a href="#home" class="active" data-en="Home" data-hi="होम">Home</a>
+                        <a href="#products" data-en="Products" data-hi="उत्पाद">Products</a>
+                        <a href="#about" data-en="About" data-hi="हमारे बारे में">About</a>
+                        <a href="#contact" data-en="Contact" data-hi="संपर्क">Contact</a>
+                    </nav>
+
+                    <div class="header-actions">
+                        <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+                            <span id="themeIcon">🌙</span>
+                        </button>
+                        <button class="lang-toggle" id="langToggle">
+                            <span id="langText">हिं</span>
+                        </button>
+                        <button class="icon-btn" id="wishlistBtn" title="Wishlist">
+                            <span>❤️</span>
+                            <span class="badge" id="wishlistCount">0</span>
+                        </button>
+                        <button class="cart-btn" id="cartBtn">
+                            🛒 <span data-en="Cart" data-hi="कार्ट">Cart</span>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </button>
+                        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-en="Nazarana Enterprises" data-hi="नजराना एंटरप्राइजेज">Nazarana Enterprises</h1>
+                <p data-en="Your One-Stop Construction Material Shop" data-hi="हर तरह का निर्माण सामग्री – एक ही जगह पर!">Your One-Stop Construction Material Shop</p>
+                
+                <div class="info-pills">
+                    <div class="pill">
+                        <span>📍</span>
+                        <span data-en="Banka, Bihar" data-hi="बांका, बिहार">Banka, Bihar</span>
+                    </div>
+                    <div class="pill">
+                        <span>📞</span>
+                        <span>+91 8676037228</span>
+                    </div>
+                    <div class="pill">
+                        <span>🕐</span>
+                        <span data-en="Open 24×7" data-hi="24×7 खुला">Open 24×7</span>
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#products" class="btn btn-primary">
+                        🛍️ <span data-en="Shop Now" data-hi="अभी खरीदें">Shop Now</span>
+                    </a>
+                    <a href="tel:+918676037228" class="btn btn-secondary">
+                        📞 <span data-en="Call Us" data-hi="कॉल करें">Call Us</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Offer Banner -->
     <div class="offer-banner">
-        <div class="container">
-            <i class="fas fa-gift"></i>
-            <span data-en="🎁 Special Offer: Get 1 Free Gift on Every 1 Ton Steel Purchase!" data-hi="🎁 विशेष ऑफर: हर 1 टन स्टील खरीद पर 1 मुफ्त उपहार पाएं!">🎁 Special Offer: Get 1 Free Gift on Every 1 Ton Steel Purchase!</span>
-        </div>
+        <span data-en="🎁 Special Offer: Get 1 Free Gift on Every 1 Ton Steel Purchase!" data-hi="🎁 विशेष ऑफर: हर 1 टन स्टील खरीद पर 1 मुफ्त उपहार पाएं!">🎁 Special Offer: Get 1 Free Gift on Every 1 Ton Steel Purchase!</span>
     </div>
 
     <!-- Products Section -->
     <section class="products" id="products">
         <div class="container">
-            <h2 class="section-title" data-en="Our Products" data-hi="हमारे उत्पाद">Our Products</h2>
-            <p class="section-subtitle" data-en="Premium Construction Materials for Your Dream Project" data-hi="आपके सपनों की परियोजना के लिए प्रीमियम निर्माण सामग्री">Premium Construction Materials for Your Dream Project</p>
-            
-            <!-- Category Filter -->
-            <div class="category-filter">
-                <button class="filter-btn active" onclick="filterProducts('all', this)" data-en="All Products" data-hi="सभी उत्पाद">All Products</button>
-                <button class="filter-btn" onclick="filterProducts('cement', this)" data-en="Cement" data-hi="सीमेंट">Cement</button>
-                <button class="filter-btn" onclick="filterProducts('sariya', this)" data-en="Steel Rods" data-hi="सरिया">Steel Rods</button>
-                <button class="filter-btn" onclick="filterProducts('charri', this)" data-en="Charri" data-hi="चरी">Charri</button>
-                <button class="filter-btn" onclick="filterProducts('bricks', this)" data-en="Bricks" data-hi="ईंट">Bricks</button>
-                <button class="filter-btn" onclick="filterProducts('others', this)" data-en="Others" data-hi="अन्य">Others</button>
+            <div class="section-header">
+                <h2 data-en="Our Products" data-hi="हमारे उत्पाद">Our Products</h2>
+                <p data-en="Quality construction materials at best prices" data-hi="सर्वोत्तम कीमतों पर गुणवत्तापूर्ण निर्माण सामग्री">Quality construction materials at best prices</p>
             </div>
 
-            <!-- Products Grid -->
-            <div class="products-grid" id="productsGrid">
-                <!-- Products will be loaded by JavaScript -->
-            </div>
-        </div>
-    </section>
+            <div class="product-controls">
+                <div class="category-filters">
+                    <button class="filter-btn active" data-category="all" data-en="All Products" data-hi="सभी उत्पाद">All Products</button>
+                    <button class="filter-btn" data-category="cement" data-en="Cement" data-hi="सीमेंट">Cement</button>
+                    <button class="filter-btn" data-category="steel" data-en="Steel Rods" data-hi="सरिया">Steel Rods</button>
+                    <button class="filter-btn" data-category="charri" data-en="Charri" data-hi="चर्री">Charri</button>
+                    <button class="filter-btn" data-category="bricks" data-en="Bricks" data-hi="ईंट">Bricks</button>
+                    <button class="filter-btn" data-category="others" data-en="Others" data-hi="अन्य">Others</button>
+                </div>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600" alt="Construction Materials">
-                    <div class="about-badge">
-                        <i class="fas fa-award"></i>
-                        <span data-en="Trusted Since Years" data-hi="वर्षों से विश्वसनीय">Trusted Since Years</span>
-                    </div>
-                </div>
-                <div class="about-text">
-                    <h2 data-en="About Nazarana Enterprises" data-hi="नज़राना एंटरप्राइजेज के बारे में">About Nazarana Enterprises</h2>
-                    <p data-en="We are a leading supplier of premium construction materials in Banka, Bihar. With years of experience and a commitment to quality, we serve builders, contractors, and homeowners with the best materials at competitive prices." data-hi="हम बांका, बिहार में प्रीमियम निर्माण सामग्री के अग्रणी आपूर्तिकर्ता हैं। वर्षों के अनुभव और गुणवत्ता के प्रति प्रतिबद्धता के साथ, हम बिल्डरों, ठेकेदारों और गृहस्वामियों को प्रतिस्पर्धी कीमतों पर सर्वोत्तम सामग्री प्रदान करते हैं।">We are a leading supplier of premium construction materials in Banka, Bihar. With years of experience and a commitment to quality, we serve builders, contractors, and homeowners with the best materials at competitive prices.</p>
-                    
-                    <div class="features">
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span data-en="Genuine Products" data-hi="असली उत्पाद">Genuine Products</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span data-en="Best Prices" data-hi="सर्वोत्तम मूल्य">Best Prices</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span data-en="24/7 Service" data-hi="24/7 सेवा">24/7 Service</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span data-en="Free Delivery*" data-hi="मुफ्त डिलीवरी*">Free Delivery*</span>
-                        </div>
-                    </div>
-                    
-                    <blockquote class="promise">
-                        <i class="fas fa-quote-left"></i>
-                        <p data-en="Our Promise – Best Quality Construction Materials at Fair Prices" data-hi="हमारा वादा – सबसे अच्छी क्वालिटी और सही दाम पर निर्माण सामग्री">Our Promise – Best Quality Construction Materials at Fair Prices</p>
-                    </blockquote>
-                </div>
+                <select class="sort-dropdown" id="sortDropdown">
+                    <option value="default" data-en="Sort By" data-hi="क्रमबद्ध करें">Sort By</option>
+                    <option value="price-low" data-en="Price: Low to High" data-hi="कीमत: कम से ज्यादा">Price: Low to High</option>
+                    <option value="price-high" data-en="Price: High to Low" data-hi="कीमत: ज्यादा से कम">Price: High to Low</option>
+                    <option value="name" data-en="Name: A to Z" data-hi="नाम: A से Z">Name: A to Z</option>
+                </select>
+            </div>
+
+            <div class="product-grid" id="productGrid">
+                <!-- Products will be injected here -->
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title" data-en="What Our Customers Say" data-hi="हमारे ग्राहक क्या कहते हैं">What Our Customers Say</h2>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p data-en="Best quality cement and steel in Banka. Very helpful staff and reasonable prices!" data-hi="बांका में सबसे अच्छी गुणवत्ता वाला सीमेंट और स्टील। बहुत मददगार स्टाफ और उचित कीमतें!">"Best quality cement and steel in Banka. Very helpful staff and reasonable prices!"</p>
-                    <h4 data-en-name="Rajesh Kumar">Rajesh Kumar</h4>
-                    <span data-en="Builder" data-hi="बिल्डर">Builder</span>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p data-en="I've been buying from Nazarana Enterprises for 5 years. Always genuine products and timely delivery." data-hi="मैं 5 साल से नज़राना एंटरप्राइजेज से खरीद रहा हूं। हमेशा असली उत्पाद और समय पर डिलीवरी।">"I've been buying from Nazarana Enterprises for 5 years. Always genuine products and timely delivery."</p>
-                    <h4 data-en-name="Amit Singh">Amit Singh</h4>
-                    <span data-en="Contractor" data-hi="ठेकेदार">Contractor</span>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p data-en="Great service! They helped me choose the right materials for my house construction. Highly recommend!" data-hi="बढ़िया सेवा! उन्होंने मेरे घर के निर्माण के लिए सही सामग्री चुनने में मेरी मदद की। अत्यधिक अनुशंसित!">"Great service! They helped me choose the right materials for my house construction. Highly recommend!"</p>
-                    <h4 data-en-name="Priya Sharma">Priya Sharma</h4>
-                    <span data-en="Homeowner" data-hi="गृहस्वामी">Homeowner</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title" data-en="Contact Us" data-hi="संपर्क करें">Contact Us</h2>
-            <p class="section-subtitle" data-en="Get in Touch for Orders and Inquiries" data-hi="ऑर्डर और पूछताछ के लिए संपर्क करें">Get in Touch for Orders and Inquiries</p>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3 data-en="Our Location" data-hi="हमारा स्थान">Our Location</h3>
-                        <p data-en="Dauna Mor, Pawai, Amarpur, Banka, Bihar" data-hi="दौना मोड़, पवई, अमरपुर, बांका, बिहार">Dauna Mor, Pawai, Amarpur, Banka, Bihar</p>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <i class="fas fa-phone"></i>
-                        <h3 data-en="Call Us" data-hi="फोन करें">Call Us</h3>
-                        <a href="tel:+918676037228">+91 8676037228</a>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <i class="fab fa-whatsapp"></i>
-                        <h3 data-en="WhatsApp" data-hi="व्हाट्सएप">WhatsApp</h3>
-                        <a href="https://wa.me/918676037228" target="_blank">+91 8676037228</a>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <i class="fas fa-clock"></i>
-                        <h3 data-en="Working Hours" data-hi="खुलने का समय">Working Hours</h3>
-                        <p data-en="Open 24 Hours, 7 Days a Week" data-hi="सप्ताह के 7 दिन, 24 घंटे खुला">Open 24 Hours, 7 Days a Week</p>
-                    </div>
-                </div>
-                
-                <div class="contact-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3626.123456789!2d86.7!3d24.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDU0JzAwLjAiTiA4NsKwNDInMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="400" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cart Sidebar -->
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3 data-en="Shopping Cart" data-hi="शॉपिंग कार्ट">Shopping Cart</h3>
-            <button onclick="toggleCart()" class="close-cart" data-en-title="Close Cart" data-hi-title="कार्ट बंद करें">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        
-        <div class="cart-items" id="cartItems">
-            <p class="empty-cart" data-en="Your cart is empty" data-hi="आपकी कार्ट खाली है">Your cart is empty</p>
-        </div>
-        
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span data-en="Total:" data-hi="कुल:">Total:</span>
-                <span id="cartTotal">₹0</span>
-            </div>
-            <button class="btn btn-primary btn-block" onclick="showCheckout()" data-en="Proceed to Checkout" data-hi="चेकआउट के लिए आगे बढ़ें" id="checkoutBtn">Proceed to Checkout</button>
-        </div>
-    </div>
-
-    <!-- Checkout Modal -->
-    <div class="modal" id="checkoutModal">
-        <div class="modal-content checkout-modal">
-            <button class="close-modal" onclick="closeCheckout()" data-en-title="Close Checkout" data-hi-title="चेकआउट बंद करें">
-                <i class="fas fa-times"></i>
-            </button>
-            
-            <h2 data-en="Complete Your Order" data-hi="अपना ऑर्डर पूरा करें">Complete Your Order</h2>
-            
-            <form id="checkoutForm">
-                <div class="form-group">
-                    <label data-en="Full Name" data-hi="पूरा नाम" for="customerName">Full Name</label>
-                    <input type="text" id="customerName" required placeholder="Enter your name">
-                </div>
-                
-                <div class="form-group">
-                    <label data-en="Phone Number" data-hi="फोन नंबर" for="customerPhone">Phone Number</label>
-                    <input type="tel" id="customerPhone" required placeholder="+91 XXXXX XXXXX" pattern="[0-9]{10}">
-                </div>
-                
-                <div class="form-group">
-                    <label data-en="Delivery Address" data-hi="डिलीवरी का पता" for="customerAddress">Delivery Address</label>
-                    <textarea id="customerAddress" required placeholder="Enter complete address"></textarea>
-                </div>
-                
-                <div class="order-summary">
-                    <h3 data-en="Order Summary" data-hi="ऑर्डर सारांश">Order Summary</h3>
-                    <div id="orderSummary"></div>
-                    <div class="summary-total">
-                        <strong data-en="Total Amount:" data-hi="कुल राशि:">Total Amount:</strong>
-                        <strong id="summaryTotal">₹0</strong>
-                    </div>
-                </div>
-                
-                <div class="payment-options">
-                    <h3 data-en="Payment Method" data-hi="भुगतान का तरीका">Payment Method</h3>
-                    <label>
-                        <input type="radio" name="payment" value="cod" checked>
-                        <span data-en="Cash on Delivery" data-hi="डिलीवरी पर भुगतान">Cash on Delivery</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="payment" value="online">
-                        <span data-en="Online Payment (UPI)" data-hi="ऑनलाइन भुगतान (UPI)">Online Payment (UPI)</span>
-                    </label>
-                </div>
-                
-                <div class="upi-section" id="upiSection" style="display: none;">
-                    <h4 data-en="Pay Using UPI" data-hi="UPI से भुगतान करें">Pay Using UPI</h4>
-                    <div class="upi-details">
-                        <div class="qr-code">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=nazaranaenterprises@paytm&pn=Nazarana%20Enterprises&cu=INR" alt="UPI QR Code">
-                        </div>
-                        <div class="upi-info">
-                            <p><strong>UPI ID:</strong> <span id="upiId">nazaranaenterprises@paytm</span></p>
-                            <p><strong data-en="Or Pay to:" data-hi="या भुगतान करें:">Or Pay to:</strong> <span id="upiPhone">+91 8676037228</span></p>
-                            <p class="upi-note" data-en="Scan QR code or use UPI ID to pay" data-hi="भुगतान के लिए QR कोड स्कैन करें या UPI ID का उपयोग करें">Scan QR code or use UPI ID to pay</p>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label data-en="Payment Reference Number (Mandatory for Online Payment)" data-hi="भुगतान संदर्भ संख्या (ऑनलाइन भुगतान के लिए अनिवार्य)" for="paymentRef">Payment Reference Number</label>
-                        <input type="text" id="paymentRef" placeholder="Enter transaction ID (e.g., UPI Ref No.)">
-                    </div>
-                </div>
-                
-                <button type="submit" class="btn btn-primary btn-block" id="confirmOrderBtn" data-en="Confirm Order on WhatsApp" data-hi="व्हाट्सएप पर ऑर्डर की पुष्टि करें">Confirm Order on WhatsApp</button>
-            </form>
-        </div>
-    </div>
-
+    <!-- About, Testimonials, Map, Footer (keep same as V1 but with updated classes) -->
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Nazarana Enterprises</h3>
-                    <p data-en="Your trusted partner for all construction material needs." data-hi="सभी निर्माण सामग्री की जरूरतों के लिए आपका विश्वसनीय साथी।">Your trusted partner for all construction material needs.</p>
-                    <div class="social-links">
-                        <a href="https://wa.me/918676037228" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="tel:+918676037228"><i class="fas fa-phone"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <p data-en="Your trusted partner for all construction material needs in Banka." data-hi="बांका में सभी निर्माण सामग्री की जरूरतों के लिए आपका विश्वसनीय साथी।">Your trusted partner for all construction material needs in Banka.</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/918676037228" class="social-icon" target="_blank">📱</a>
+                        <a href="tel:+918676037228" class="social-icon">📞</a>
+                        <a href="#" class="social-icon">f</a>
+                        <a href="#" class="social-icon">📷</a>
                     </div>
                 </div>
-                
+
                 <div class="footer-section">
-                    <h4 data-en="Quick Links" data-hi="त्वरित लिंक">Quick Links</h4>
+                    <h3 data-en="Quick Links" data-hi="त्वरित लिंक">Quick Links</h3>
                     <ul>
                         <li><a href="#home" data-en="Home" data-hi="होम">Home</a></li>
                         <li><a href="#products" data-en="Products" data-hi="उत्पाद">Products</a></li>
                         <li><a href="#about" data-en="About Us" data-hi="हमारे बारे में">About Us</a></li>
-                        <li><a href="#contact" data-en="Contact" data-hi="संपर्क करें">Contact</a></li>
+                        <li><a href="#contact" data-en="Contact" data-hi="संपर्क">Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
-                    <h4 data-en="Products" data-hi="उत्पाद">Products</h4>
+                    <h3 data-en="Contact Info" data-hi="संपर्क जानकारी">Contact Info</h3>
                     <ul>
-                        <li><a href="#products" data-en="Cement" data-hi="सीमेंट">Cement</a></li>
-                        <li><a href="#products" data-en="Steel Rods (Sariya)" data-hi="सरिया">Steel Rods (Sariya)</a></li>
-                        <li><a href="#products" data-en="Sand & Charri" data-hi="रेत और चरी">Sand & Charri</a></li>
-                        <li><a href="#products" data-en="Bricks" data-hi="ईंट">Bricks</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4 data-en="Contact Info" data-hi="संपर्क जानकारी">Contact Info</h4>
-                    <ul>
-                        <li data-en="Dauna Mor, Pawai, Amarpur, Banka" data-hi="दौना मोड़, पवई, अमरपुर, बांका"><i class="fas fa-map-marker-alt"></i> Dauna Mor, Pawai, Amarpur, Banka</li>
-                        <li><i class="fas fa-phone"></i> +91 8676037228</li>
-                        <li data-en="24×7 Open" data-hi="24×7 खुला"><i class="fas fa-clock"></i> 24×7 Open</li>
+                        <li data-en="📍 Dauna Mor, Pawai, Amarpur, Banka" data-hi="📍 दौना मोड़, पवई, अमरपुर, बांका">📍 Dauna Mor, Pawai, Amarpur, Banka</li>
+                        <li>📞 +91 8676037228</li>
+                        <li data-en="🕐 Open 24×7" data-hi="🕐 24×7 खुला">🕐 Open 24×7</li>
+                        <li>💳 nazaranaenterprises@paytm</li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                <p>&copy; 2024 Nazarana Enterprises. <span data-en="All Rights Reserved." data-hi="सर्वाधिकार सुरक्षित।">All Rights Reserved.</span></p>
-                <p data-en="DESIGEND WITH ABHISHEK KUMAR ❤️" data-hi="बेहतर निर्माण के लिए ❤️ से डिज़ाइन किया गया">Designed with ❤️ for Better Construction</p>
+                <p>&copy; 2024 Nazarana Enterprises — <span data-en="Designed with ❤️ for Better Construction" data-hi="बेहतर निर्माण के लिए ❤️ के साथ डिजाइन किया गया">Designed with ❤️ for Better Construction</span></p>
             </div>
         </div>
     </footer>
 
-    <!-- Overlay -->
-    <div class="overlay" id="overlay" onclick="closeAll()"></div>
+    <!-- Cart Drawer -->
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3 data-en="Shopping Cart" data-hi="शॉपिंग कार्ट">Shopping Cart</h3>
+            <button class="cart-close" id="cartClose">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <div class="cart-empty-icon">🛒</div>
+                <p data-en="Your cart is empty" data-hi="आपकी कार्ट खाली है">Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="promo-code">
+                <input type="text" class="promo-input" id="promoInput" placeholder="Promo code">
+                <button class="promo-btn" id="promoBtn" data-en="Apply" data-hi="लागू करें">Apply</button>
+            </div>
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span data-en="Subtotal:" data-hi="उप-योग:">Subtotal:</span>
+                    <span id="cartSubtotal">₹0</span>
+                </div>
+                <div class="summary-row">
+                    <span data-en="Discount:" data-hi="छूट:">Discount:</span>
+                    <span id="cartDiscount">₹0</span>
+                </div>
+                <div class="summary-row total">
+                    <span data-en="Total:" data-hi="कुल:">Total:</span>
+                    <span id="cartTotal">₹0</span>
+                </div>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">
+                <span data-en="Proceed to Checkout" data-hi="चेकआउट के लिए आगे बढ़ें">Proceed to Checkout</span>
+            </button>
+        </div>
+    </div>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    <!-- Calculator Modal -->
+    <div class="calculator-modal" id="calculatorModal">
+        <div class="calculator-content">
+            <div class="calculator-header">
+                <h3 data-en="Construction Calculator" data-hi="निर्माण कैलकुलेटर">Construction Calculator</h3>
+                <button class="calculator-close" id="calculatorClose">✕</button>
+            </div>
+            <div class="calculator-body">
+                <div class="calc-tabs">
+                    <button class="calc-tab active" data-calc="cement" data-en="Cement" data-hi="सीमेंट">Cement</button>
+                    <button class="calc-tab" data-calc="steel" data-en="Steel" data-hi="स्टील">Steel</button>
+                    <button class="calc-tab" data-calc="bricks" data-en="Bricks" data-hi="ईंट">Bricks</button>
+                </div>
+
+                <!-- Cement Calculator -->
+                <div class="calc-form active" id="cementCalc">
+                    <div class="form-group">
+                        <label data-en="Area (sq ft)" data-hi="क्षेत्रफल (वर्ग फुट)">Area (sq ft)</label>
+                        <input type="number" id="cementArea" placeholder="1000">
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Type" data-hi="प्रकार">Type</label>
+                        <select id="cementType">
+                            <option value="floor">Floor/Flooring</option>
+                            <option value="plaster">Wall Plaster</option>
+                            <option value="rcc">RCC Work</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" onclick="calculateCement()">
+                        <span data-en="Calculate" data-hi="गणना करें">Calculate</span>
+                    </button>
+                    <div class="calc-result" id="cementResult">
+                        <h3 data-en="Required Cement" data-hi="आवश्यक सीमेंट">Required Cement</h3>
+                        <div class="calc-result-value" id="cementValue">0 bags</div>
+                        <p data-en="Estimated for standard work" data-hi="मानक कार्य के लिए अनुमानित">Estimated for standard work</p>
+                    </div>
+                </div>
+
+                <!-- Steel Calculator -->
+                <div class="calc-form" id="steelCalc">
+                    <div class="form-group">
+                        <label data-en="Building Type" data-hi="भवन प्रकार">Building Type</label>
+                        <select id="buildingType">
+                            <option value="residential">Residential</option>
+                            <option value="commercial">Commercial</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Floor Area (sq ft)" data-hi="फर्श क्षेत्र (वर्ग फुट)">Floor Area (sq ft)</label>
+                        <input type="number" id="steelArea" placeholder="1000">
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Number of Floors" data-hi="मंजिलों की संख्या">Number of Floors</label>
+                        <input type="number" id="steelFloors" placeholder="2">
+                    </div>
+                    <button class="btn btn-primary" onclick="calculateSteel()">
+                        <span data-en="Calculate" data-hi="गणना करें">Calculate</span>
+                    </button>
+                    <div class="calc-result" id="steelResult">
+                        <h3 data-en="Required Steel" data-hi="आवश्यक स्टील">Required Steel</h3>
+                        <div class="calc-result-value" id="steelValue">0 quintals</div>
+                        <p data-en="Approximate estimation" data-hi="अनुमानित अनुमान">Approximate estimation</p>
+                    </div>
+                </div>
+
+                <!-- Bricks Calculator -->
+                <div class="calc-form" id="bricksCalc">
+                    <div class="form-group">
+                        <label data-en="Wall Length (ft)" data-hi="दीवार लंबाई (फुट)">Wall Length (ft)</label>
+                        <input type="number" id="wallLength" placeholder="10">
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Wall Height (ft)" data-hi="दीवार ऊंचाई (फुट)">Wall Height (ft)</label>
+                        <input type="number" id="wallHeight" placeholder="10">
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Wall Thickness" data-hi="दीवार मोटाई">Wall Thickness</label>
+                        <select id="wallThickness">
+                            <option value="4">4 inch</option>
+                            <option value="9">9 inch</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" onclick="calculateBricks()">
+                        <span data-en="Calculate" data-hi="गणना करें">Calculate</span>
+                    </button>
+                    <div class="calc-result" id="bricksResult">
+                        <h3 data-en="Required Bricks" data-hi="आवश्यक ईंटें">Required Bricks</h3>
+                        <div class="calc-result-value" id="bricksValue">0 pcs</div>
+                        <p data-en="Including 10% wastage" data-hi="10% बर्बादी सहित">Including 10% wastage</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal (same as V1 but with updated styles) -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-en="Complete Your Order" data-hi="अपना ऑर्डर पूरा करें">Complete Your Order</h3>
+                <button class="modal-close" id="modalClose">✕</button>
+            </div>
+            <div class="modal-body">
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label data-en="Full Name *" data-hi="पूरा नाम *">Full Name *</label>
+                        <input type="text" id="customerName" required placeholder="Enter your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label data-en="Phone Number *" data-hi="फ़ोन नंबर *">Phone Number *</label>
+                        <input type="tel" id="customerPhone" required placeholder="+91 XXXXXXXXXX">
+                    </div>
+
+                    <div class="form-group">
+                        <label data-en="Delivery Address *" data-hi="डिलीवरी का पता *">Delivery Address *</label>
+                        <textarea id="customerAddress" required placeholder="Enter complete address"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-en="Payment Method *" data-hi="भुगतान का तरीका *">Payment Method *</label>
+                        <div class="payment-methods">
+                            <div class="payment-option selected" data-method="cod">
+                                <input type="radio" name="payment" id="cod" value="cod" checked>
+                                <label for="cod">
+                                    <div class="payment-icon">💵</div>
+                                    <div data-en="Cash on Delivery" data-hi="कैश ऑन डिलीवरी">Cash on Delivery</div>
+                                </label>
+                            </div>
+                            <div class="payment-option" data-method="online">
+                                <input type="radio" name="payment" id="online" value="online">
+                                <label for="online">
+                                    <div class="payment-icon">📱</div>
+                                    <div data-en="Online UPI" data-hi="ऑनलाइन UPI">Online UPI</div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="upi-details" id="upiDetails">
+                        <h4 data-en="Pay via UPI" data-hi="UPI के माध्यम से भुगतान करें">Pay via UPI</h4>
+                        <div class="upi-id">nazaranaenterprises@paytm</div>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect fill='%23fff' width='200' height='200'/%3E%3Ctext x='100' y='100' font-size='14' fill='%23333' text-anchor='middle' dominant-baseline='middle'%3EUPI QR Code%3C/text%3E%3C/svg%3E" alt="UPI QR" class="upi-qr">
+                        <a href="upi://pay?pa=nazaranaenterprises@paytm&pn=Nazarana%20Enterprises&cu=INR" class="upi-link" data-en="Pay Now with UPI App" data-hi="UPI ऐप से भुगतान करें">Pay Now with UPI App</a>
+                        
+                        <div class="form-group mt-3">
+                            <label data-en="Payment Reference/UTR *" data-hi="भुगतान संदर्भ/UTR *">Payment Reference/UTR *</label>
+                            <input type="text" id="upiRef" placeholder="12-digit UTR number">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-order">
+                        <span data-en="Place Order via WhatsApp" data-hi="WhatsApp के माध्यम से ऑर्डर दें">Place Order via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Tools -->
+    <div class="floating-tools">
+        <button class="floating-btn" id="calculatorBtn" title="Construction Calculator">
+            🧮
+        </button>
+        <button class="floating-btn scroll-top" id="scrollTop" title="Back to Top">
+            ↑
+        </button>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/918676037228" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+        📱
+    </a>
+
+    <!-- Mobile Bottom Navigation -->
+    <div class="mobile-bottom-nav">
+        <nav>
+            <a href="#home" class="mobile-nav-item active">
+                <span class="mobile-nav-icon">🏠</span>
+                <span data-en="Home" data-hi="होम">Home</span>
+            </a>
+            <a href="#products" class="mobile-nav-item">
+                <span class="mobile-nav-icon">📦</span>
+                <span data-en="Products" data-hi="उत्पाद">Products</span>
+            </a>
+            <a href="javascript:void(0)" class="mobile-nav-item" id="mobileCalcBtn">
+                <span class="mobile-nav-icon">🧮</span>
+                <span data-en="Calculate" data-hi="गणना">Calculate</span>
+            </a>
+            <a href="javascript:void(0)" class="mobile-nav-item" id="mobileCartBtn">
+                <span class="mobile-nav-icon">🛒</span>
+                <span data-en="Cart" data-hi="कार्ट">Cart</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <span class="toast-icon" id="toastIcon">✓</span>
+        <span id="toastMessage">Success</span>
+    </div>
+
+    <script>
+        // Product Data (same as V1 but with ratings added)
+        const products = [
+            // Cement
+            { id: 1, category: 'cement', nameEn: 'ACC GOLD Cement', nameHi: 'ACC GOLD सीमेंट', price: 380, unit: 'bag', unitHi: 'बैग', image: 'AG.jpeg', badge: '', rating: 4.5, reviews: 128 },
+            { id: 2, category: 'cement', nameEn: 'ACC F2R Cement', nameHi: 'ACC F2R सीमेंट', price: 360, unit: 'bag', unitHi: 'बैग', image: 'F2R.jpeg', badge: '', rating: 4.8, reviews: 95 },
+            { id: 3, category: 'cement', nameEn: 'Power Max Baunger', nameHi: 'पावर मैक्स बौंगर', price: 325, unit: 'bag', unitHi: 'बैग', image: 'Bangr.jpeg', badge: '', rating: 4.2, reviews: 64 },
+            { id: 4, category: 'cement', nameEn: 'Star Cement Premium', nameHi: 'स्टार सीमेंट प्रीमियम', price: 400, unit: 'bag', unitHi: 'बैग', image: 'starpre.jpeg', badge: '', rating: 4.7, reviews: 112 },
+            { id: 5, category: 'cement', nameEn: 'Star Cement Standard', nameHi: 'स्टार सीमेंट स्टैंडर्ड', price: 360, unit: 'bag', unitHi: 'बैग', image: 'starstand.jpeg', badge: '', rating: 4.4, reviews: 87 },
+            { id: 6, category: 'cement', nameEn: 'Star Cement Economy', nameHi: 'स्टार सीमेंट इकॉनमी', price: 340, unit: 'bag', unitHi: 'बैग', image: 'streco.jpeg', badge: '', rating: 4.0, reviews: 53 },
+
+            // Steel Rods
+            { id: 7, category: 'steel', nameEn: 'Captain 10–16mm', nameHi: 'कैप्टन 10–16mm', price: 6600, unit: 'quintal', unitHi: 'क्विंटल', image: '7.jpeg', badge: '🎁 Free Gift', rating: 4.6, reviews: 145 },
+            { id: 8, category: 'steel', nameEn: 'Captain 8mm', nameHi: 'कैप्टन 8mm', price: 6800, unit: 'quintal', unitHi: 'क्विंटल', image: '8.jpeg', badge: '🎁 Free Gift', rating: 4.5, reviews: 132 },
+            { id: 9, category: 'steel', nameEn: 'Mongiya 10–16mm', nameHi: 'मोंगिया 10–16mm', price: 6200, unit: 'quintal', unitHi: 'क्विंटल', image: '9.jpeg', badge: '🎁 Free Gift', rating: 4.3, reviews: 98 },
+            { id: 10, category: 'steel', nameEn: 'Mongiya 8mm', nameHi: 'मोंगिया 8mm', price: 6400, unit: 'quintal', unitHi: 'क्विंटल', image: '10.jpeg', badge: '🎁 Free Gift', rating: 4.4, reviews: 87 },
+            { id: 11, category: 'steel', nameEn: 'Max Super 10–16mm', nameHi: 'मैक्स सुपर 10–16mm', price: 5800, unit: 'quintal', unitHi: 'क्विंटल', image: '11.jpg', badge: '🎁 Free Gift', rating: 4.1, reviews: 76 },
+            { id: 12, category: 'steel', nameEn: 'ICL 10–16mm', nameHi: 'ICL 10–16mm', price: 5800, unit: 'quintal', unitHi: 'क्विंटल', image: '12.jpeg', badge: '🎁 Free Gift', rating: 4.2, reviews: 69 },
+
+            // Charri
+            { id: 13, category: 'charri', nameEn: '5/8 Charri', nameHi: '5/8 चर्री', price: 6000, priceMax: 6500, unit: 'truck', unitHi: 'ट्रक', image: '13.jpeg', badge: '', rating: 4.0, reviews: 45 },
+            { id: 14, category: 'charri', nameEn: '3/4 Charri', nameHi: '3/4 चर्री', price: 4500, priceMax: 4800, unit: 'truck', unitHi: 'ट्रक', image: '14.jpeg', badge: '', rating: 4.1, reviews: 52 },
+
+            // Bricks
+            { id: 15, category: 'bricks', nameEn: 'Chimni Bricks (Red Bricks)', nameHi: 'चिमनी ईंट', price: 16000, unit: '1500 pcs', unitHi: '1500 पीस', image: '15.jpeg', badge: '', rating: 4.5, reviews: 89 },
+
+            // Others
+            { id: 16, category: 'others', nameEn: 'Baalu (Construction Sand)', nameHi: 'बालू', price: 110, unit: 'packet', unitHi: 'पैकेट', image: '16.jpeg', badge: '', rating: 4.3, reviews: 67 },
+            { id: 17, category: 'others', nameEn: 'Ventilator ½ ft', nameHi: 'वेंटिलेटर ½ फुट', price: 110, unit: 'piece', unitHi: 'पीस', image: '17.jpeg', badge: '', rating: 4.0, reviews: 34 },
+            { id: 18, category: 'others', nameEn: 'Ventilator 1×1.5 ft', nameHi: 'वेंटिलेटर 1×1.5 फुट', price: 80, unit: 'piece', unitHi: 'पीस', image: '18.jpeg', badge: '', rating: 4.1, reviews: 28 },
+            { id: 19, category: 'others', nameEn: 'Ventilator 1×1 ft', nameHi: 'वेंटिलेटर 1×1 फुट', price: 60, unit: 'piece', unitHi: 'पीस', image: '19.jpeg', badge: '', rating: 4.0, reviews: 31 },
+            { id: 20, category: 'others', nameEn: 'Iron Wire (Thick)', nameHi: 'लोहे का तार (मोटा)', price: 80, unit: 'kg', unitHi: 'किलो', image: '20.jpeg', badge: '', rating: 4.2, reviews: 42 },
+            { id: 21, category: 'others', nameEn: 'Iron Wire (Thin)', nameHi: 'लोहे का तार (पतला)', price: 90, unit: 'kg', unitHi: 'किलो', image: '21.jpeg', badge: '', rating: 4.1, reviews: 38 },
+            { id: 22, category: 'others', nameEn: 'Iron Ring Heavy 7×7 inch', nameHi: 'लोहा रिंग भारी 7×7 इंच', price: 12, unit: 'piece', unitHi: 'पीस', image: '22.jpeg', badge: '', rating: 4.0, reviews: 25 },
+            { id: 23, category: 'others', nameEn: 'Iron Ring Heavy 6×6 inch', nameHi: 'लोहा रिंग भारी 6×6 इंच', price: 10, unit: 'piece', unitHi: 'पीस', image: '23.jpeg', badge: '', rating: 4.0, reviews: 22 },
+            { id: 24, category: 'others', nameEn: 'Iron Ring Heavy 4×6 inch', nameHi: 'लोहा रिंग भारी 4×6 इंच', price: 8, unit: 'piece', unitHi: 'पीस', image: '24.jpeg', badge: '', rating: 4.1, reviews: 19 },
+            { id: 25, category: 'others', nameEn: 'Iron Ring Heavy 3×4 inch', nameHi: 'लोहा रिंग भारी 3×4 इंच', price: 6, unit: 'piece', unitHi: 'पीस', image: '25.jpeg', badge: '', rating: 4.0, reviews: 17 },
+            { id: 26, category: 'others', nameEn: 'Iron Ring Medium 7×7 inch', nameHi: 'लोहा रिंग मध्यम 7×7 इंच', price: 8, unit: 'piece', unitHi: 'पीस', image: '26.jpeg', badge: '', rating: 4.0, reviews: 16 },
+            { id: 27, category: 'others', nameEn: 'Iron Ring Medium 6×6 inch', nameHi: 'लोहा रिंग मध्यम 6×6 इंच', price: 7, unit: 'piece', unitHi: 'पीस', image: '27.jpeg', badge: '', rating: 4.0, reviews: 14 },
+            { id: 28, category: 'others', nameEn: 'Iron Ring Medium 4×6 inch', nameHi: 'लोहा रिंग मध्यम 4×6 इंच', price: 6, unit: 'piece', unitHi: 'पीस', image: '28.jpeg', badge: '', rating: 4.0, reviews: 13 },
+            { id: 29, category: 'others', nameEn: 'Iron Ring Medium 3×4 inch', nameHi: 'लोहा रिंग मध्यम 3×4 इंच', price: 5, unit: 'piece', unitHi: 'पीस', image: '30.jpeg', badge: '', rating: 4.0, reviews: 11 },
+            { id: 30, category: 'others', nameEn: 'Chemical Water Shield 1L', nameHi: 'केमिकल वाटर शील्ड 1L', price: 140, unit: 'litre', unitHi: 'लीटर', image: '30.jpeg', badge: '', rating: 4.3, reviews: 56 },
+            { id: 31, category: 'others', nameEn: 'Chemical Water Shield 5L', nameHi: 'केमिकल वाटर शील्ड 5L', price: 700, unit: '5 litre', unitHi: '5 लीटर', image: '31.jpeg', badge: '', rating: 4.4, reviews: 48 },
+            { id: 32, category: 'others', nameEn: 'Chemical Water Shield 10L', nameHi: 'केमिकल वाटर शील्ड 10L', price: 1400, unit: '10 litre', unitHi: '10 लीटर', image: '32.jpeg', badge: '', rating: 4.5, reviews: 41 },
+            { id: 33, category: 'others', nameEn: 'Construction Stone Chips', nameHi: 'निर्माण पत्थर चिप्स', price: 350, unit: 'packet', unitHi: 'पैकेट', image: '33.jpeg', badge: '', rating: 4.2, reviews: 37 },
+        ];
+
+        // State
+        let currentLang = 'en';
+        let currentTheme = 'light';
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        let currentCategory = 'all';
+        let searchQuery = '';
+        let currentSort = 'default';
+        let discount = 0;
+        let promoCode = '';
+
+        // Promo codes (hardcoded)
+        const promoCodes = {
+            'SAVE10': 10, // 10% discount
+            'WELCOME': 5,  // 5% discount
+            'BULK20': 20   // 20% discount for bulk orders
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            updateCartUI();
+            updateWishlistUI();
+            initEventListeners();
+            initScrollProgress();
+        });
+
+        // Render Products with all filters
+        function renderProducts() {
+            const grid = document.getElementById('productGrid');
+            let filteredProducts = [...products];
+
+            // Filter by category
+            if (currentCategory !== 'all') {
+                filteredProducts = filteredProducts.filter(p => p.category === currentCategory);
+            }
+
+            // Filter by search
+            if (searchQuery) {
+                filteredProducts = filteredProducts.filter(p => 
+                    p.nameEn.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    p.nameHi.includes(searchQuery)
+                );
+            }
+
+            // Sort
+            if (currentSort === 'price-low') {
+                filteredProducts.sort((a, b) => a.price - b.price);
+            } else if (currentSort === 'price-high') {
+                filteredProducts.sort((a, b) => b.price - a.price);
+            } else if (currentSort === 'name') {
+                filteredProducts.sort((a, b) => a.nameEn.localeCompare(b.nameEn));
+            }
+
+            if (filteredProducts.length === 0) {
+                grid.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: var(--text-secondary);">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">📦</div>
+                        <h3>${currentLang === 'en' ? 'No products found' : 'कोई उत्पाद नहीं मिला'}</h3>
+                        <p>${currentLang === 'en' ? 'Try adjusting your search or filters' : 'अपनी खोज या फ़िल्टर समायोजित करने का प्रयास करें'}</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filteredProducts.map(product => {
+                const name = currentLang === 'en' ? product.nameEn : product.nameHi;
+                const unit = currentLang === 'en' ? product.unit : product.unitHi;
+                const priceDisplay = product.priceMax 
+                    ? `₹${product.price.toLocaleString('en-IN')}–₹${product.priceMax.toLocaleString('en-IN')}`
+                    : `₹${product.price.toLocaleString('en-IN')}`;
+                
+                const isInWishlist = wishlist.some(item => item.id === product.id);
+                const stars = '⭐'.repeat(Math.floor(product.rating)) + (product.rating % 1 >= 0.5 ? '½' : '');
+
+                return `
+                    <div class="product-card" data-category="${product.category}">
+                        <button class="wishlist-btn ${isInWishlist ? 'active' : ''}" onclick="toggleWishlist(${product.id})">
+                            ${isInWishlist ? '❤️' : '🤍'}
+                        </button>
+                        ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
+                        
+                        <div class="product-image-wrapper">
+                            <img src="${product.image}" alt="${name}" class="product-image" 
+                                onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22250%22%3E%3Crect fill=%22%23F5F5F5%22 width=%22300%22 height=%22250%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2216%22 fill=%22%236B7280%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3E${name}%3C/text%3E%3C/svg%3E'">
+                            <div class="product-overlay">
+                                <div class="quick-actions">
+                                    <button class="quick-btn" onclick="quickView(${product.id})">
+                                        👁️ ${currentLang === 'en' ? 'Quick View' : 'त्वरित देखें'}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-category">${product.category}</div>
+                            <div class="product-name">${name}</div>
+                            
+                            <div class="product-rating">
+                                <span class="stars">${stars}</span>
+                                <span class="rating-count">(${product.reviews})</span>
+                            </div>
+
+                            <div class="product-footer">
+                                <div class="product-price-wrapper">
+                                    <div class="product-price">${priceDisplay}</div>
+                                    <div class="product-unit">${currentLang === 'en' ? 'per' : 'प्रति'} ${unit}</div>
+                                </div>
+                                <button class="add-to-cart" onclick="addToCart(${product.id})">
+                                    ${currentLang === 'en' ? '+ Add' : '+ जोड़ें'}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Quick View (simplified - just shows alert, can be enhanced)
+        function quickView(productId) {
+            const product = products.find(p => p.id === productId);
+            const name = currentLang === 'en' ? product.nameEn : product.nameHi;
+            showToast(`${name} - ₹${product.price}`, 'info');
+            // In real implementation, open a modal with full product details
+        }
+
+        // Wishlist Functions
+        function toggleWishlist(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingIndex = wishlist.findIndex(item => item.id === productId);
+
+            if (existingIndex !== -1) {
+                wishlist.splice(existingIndex, 1);
+                showToast(currentLang === 'en' ? 'Removed from wishlist' : 'विशलिस्ट से हटाया गया', 'error');
+            } else {
+                wishlist.push(product);
+                showToast(currentLang === 'en' ? 'Added to wishlist' : 'विशलिस्ट में जोड़ा गया', 'success');
+            }
+
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            updateWishlistUI();
+            renderProducts(); // Re-render to update heart icon
+        }
+
+        function updateWishlistUI() {
+            document.getElementById('wishlistCount').textContent = wishlist.length;
+        }
+
+        // Search Functions
+        document.getElementById('searchBar').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            document.getElementById('clearSearch').classList.toggle('visible', searchQuery.length > 0);
+            renderProducts();
+        });
+
+        document.getElementById('clearSearch').addEventListener('click', () => {
+            searchQuery = '';
+            document.getElementById('searchBar').value = '';
+            document.getElementById('clearSearch').classList.remove('visible');
+            renderProducts();
+        });
+
+        // Sort Functions
+        document.getElementById('sortDropdown').addEventListener('change', (e) => {
+            currentSort = e.target.value;
+            renderProducts();
+        });
+
+        // Theme Toggle
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            document.getElementById('themeIcon').textContent = currentTheme === 'light' ? '🌙' : '☀️';
+            localStorage.setItem('theme', currentTheme);
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            currentTheme = savedTheme;
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            document.getElementById('themeIcon').textContent = currentTheme === 'light' ? '🌙' : '☀️';
+        }
+
+        // Language Toggle
+        document.getElementById('langToggle').addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'hi' : 'en';
+            document.getElementById('langText').textContent = currentLang === 'en' ? 'हिं' : 'EN';
+            
+            // Update search placeholder
+            const searchBar = document.getElementById('searchBar');
+            searchBar.placeholder = searchBar.getAttribute('data-placeholder-' + currentLang);
+
+            // Update all translatable elements
+            document.querySelectorAll('[data-en]').forEach(el => {
+                if (el.hasAttribute('data-' + currentLang)) {
+                    el.textContent = el.getAttribute('data-' + currentLang);
+                }
+            });
+
+            renderProducts();
+            updateCartUI();
+        });
+
+        // Add to Cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartUI();
+            showToast(currentLang === 'en' ? 'Added to cart!' : 'कार्ट में जोड़ा गया!', 'success');
+        }
+
+        // Update Cart UI
+        function updateCartUI() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            const cartFooter = document.getElementById('cartFooter');
+            const cartSubtotal = document.getElementById('cartSubtotal');
+            const cartDiscount = document.getElementById('cartDiscount');
+            const cartTotal = document.getElementById('cartTotal');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const discountAmount = subtotal * (discount / 100);
+            const total = subtotal - discountAmount;
+
+            cartCount.textContent = totalItems;
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="cart-empty">
+                        <div class="cart-empty-icon">🛒</div>
+                        <p data-en="Your cart is empty" data-hi="आपकी कार्ट खाली है">${currentLang === 'en' ? 'Your cart is empty' : 'आपकी कार्ट खाली है'}</p>
+                    </div>
+                `;
+                cartFooter.style.display = 'none';
+            } else {
+                cartItems.innerHTML = cart.map(item => {
+                    const name = currentLang === 'en' ? item.nameEn : item.nameHi;
+                    const unit = currentLang === 'en' ? item.unit : item.unitHi;
+                    return `
+                        <div class="cart-item">
+                            <img src="${item.image}" alt="${name}" class="cart-item-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2290%22 height=%2290%22%3E%3Crect fill=%22%23F5F5F5%22 width=%2290%22 height=%2290%22/%3E%3C/svg%3E'">
+                            <div class="cart-item-info">
+                                <div class="cart-item-name">${name}</div>
+                                <div class="cart-item-price">₹${item.price.toLocaleString('en-IN')} / ${unit}</div>
+                                <div class="cart-item-controls">
+                                    <button class="qty-btn" onclick="updateQuantity(${item.id}, -1)">−</button>
+                                    <span class="qty-display">${item.quantity}</span>
+                                    <button class="qty-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                                    <button class="remove-item" onclick="removeFromCart(${item.id})">${currentLang === 'en' ? 'Remove' : 'हटाएं'}</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                cartFooter.style.display = 'block';
+                cartSubtotal.textContent = `₹${subtotal.toLocaleString('en-IN')}`;
+                cartDiscount.textContent = `−₹${discountAmount.toLocaleString('en-IN')} ${discount > 0 ? `(${discount}%)` : ''}`;
+                cartTotal.textContent = `₹${total.toLocaleString('en-IN')}`;
+            }
+        }
+
+        // Promo Code
+        document.getElementById('promoBtn').addEventListener('click', () => {
+            const code = document.getElementById('promoInput').value.trim().toUpperCase();
+            if (promoCodes[code]) {
+                discount = promoCodes[code];
+                promoCode = code;
+                updateCartUI();
+                showToast(`${currentLang === 'en' ? 'Promo applied!' : 'प्रोमो लागू किया गया!'} ${discount}% ${currentLang === 'en' ? 'discount' : 'छूट'}`, 'success');
+            } else {
+                showToast(currentLang === 'en' ? 'Invalid promo code' : 'अमान्य प्रोमो कोड', 'error');
+            }
+        });
+
+        // Update Quantity
+        function updateQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeFromCart(productId);
+                } else {
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    updateCartUI();
+                }
+            }
+        }
+
+        // Remove from Cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartUI();
+            showToast(currentLang === 'en' ? 'Removed from cart' : 'कार्ट से हटाया गया', 'error');
+        }
+
+        // Calculator Functions
+        function calculateCement() {
+            const area = parseFloat(document.getElementById('cementArea').value);
+            const type = document.getElementById('cementType').value;
+            
+            if (!area || area <= 0) {
+                showToast(currentLang === 'en' ? 'Please enter valid area' : 'कृपया मान्य क्षेत्र दर्ज करें', 'warning');
+                return;
+            }
+
+            let bagsPerSqFt;
+            if (type === 'floor') bagsPerSqFt = 0.008;
+            else if (type === 'plaster') bagsPerSqFt = 0.006;
+            else bagsPerSqFt = 0.01;
+
+            const bags = Math.ceil(area * bagsPerSqFt);
+            document.getElementById('cementValue').textContent = `${bags} ${currentLang === 'en' ? 'bags' : 'बैग'}`;
+            document.getElementById('cementResult').classList.add('active');
+        }
+
+        function calculateSteel() {
+            const area = parseFloat(document.getElementById('steelArea').value);
+            const floors = parseInt(document.getElementById('steelFloors').value);
+            const type = document.getElementById('buildingType').value;
+            
+            if (!area || !floors || area <= 0 || floors <= 0) {
+                showToast(currentLang === 'en' ? 'Please enter valid values' : 'कृपया मान्य मान दर्ज करें', 'warning');
+                return;
+            }
+
+            const kgPerSqFt = type === 'residential' ? 4 : 5;
+            const totalKg = area * floors * kgPerSqFt;
+            const quintals = (totalKg / 100).toFixed(2);
+            
+            document.getElementById('steelValue').textContent = `${quintals} ${currentLang === 'en' ? 'quintals' : 'क्विंटल'}`;
+            document.getElementById('steelResult').classList.add('active');
+        }
+
+        function calculateBricks() {
+            const length = parseFloat(document.getElementById('wallLength').value);
+            const height = parseFloat(document.getElementById('wallHeight').value);
+            const thickness = parseInt(document.getElementById('wallThickness').value);
+            
+            if (!length || !height || length <= 0 || height <= 0) {
+                showToast(currentLang === 'en' ? 'Please enter valid dimensions' : 'कृपया मान्य आयाम दर्ज करें', 'warning');
+                return;
+            }
+
+            const area = length * height;
+            const bricksPerSqFt = thickness === 4 ? 8.5 : 17;
+            const bricks = Math.ceil(area * bricksPerSqFt * 1.1); // 10% wastage
+            
+            document.getElementById('bricksValue').textContent = `${bricks} ${currentLang === 'en' ? 'pcs' : 'पीस'}`;
+            document.getElementById('bricksResult').classList.add('active');
+        }
+
+        // Calculator Tabs
+        document.querySelectorAll('.calc-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.calc-form').forEach(f => f.classList.remove('active'));
+                document.querySelectorAll('.calc-result').forEach(r => r.classList.remove('active'));
+                
+                tab.classList.add('active');
+                const calcType = tab.dataset.calc;
+                document.getElementById(`${calcType}Calc`).classList.add('active');
+            });
+        });
+
+        // Scroll Progress
+        function initScrollProgress() {
+            const progressBar = document.getElementById('scrollProgress');
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.pageYOffset;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+                progressBar.style.width = `${scrollPercent}%`;
+            });
+        }
+
+        // Scroll to Top
+        document.getElementById('scrollTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Category Filters
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                currentCategory = e.target.dataset.category;
+                renderProducts();
+            });
+        });
+
+        // Event Listeners
+        function initEventListeners() {
+            // Cart
+            document.getElementById('cartBtn').addEventListener('click', () => {
+                document.getElementById('cartDrawer').classList.add('active');
+                document.getElementById('overlay').classList.add('active');
+            });
+
+            document.getElementById('cartClose').addEventListener('click', () => {
+                document.getElementById('cartDrawer').classList.remove('active');
+                document.getElementById('overlay').classList.remove('active');
+            });
+
+            document.getElementById('mobileCartBtn').addEventListener('click', () => {
+                document.getElementById('cartDrawer').classList.add('active');
+                document.getElementById('overlay').classList.add('active');
+            });
+
+            // Calculator
+            document.getElementById('calculatorBtn').addEventListener('click', () => {
+                document.getElementById('calculatorModal').classList.add('active');
+            });
+
+            document.getElementById('mobileCalcBtn').addEventListener('click', () => {
+                document.getElementById('calculatorModal').classList.add('active');
+            });
+
+            document.getElementById('calculatorClose').addEventListener('click', () => {
+                document.getElementById('calculatorModal').classList.remove('active');
+            });
+
+            // Checkout
+            document.getElementById('checkoutBtn').addEventListener('click', () => {
+                if (cart.length === 0) return;
+                document.getElementById('checkoutModal').classList.add('active');
+            });
+
+            document.getElementById('modalClose').addEventListener('click', () => {
+                document.getElementById('checkoutModal').classList.remove('active');
+            });
+
+            // Payment Method
+            document.querySelectorAll('.payment-option').forEach(option => {
+                option.addEventListener('click', () => {
+                    document.querySelectorAll('.payment-option').forEach(o => o.classList.remove('selected'));
+                    option.classList.add('selected');
+                    option.querySelector('input').checked = true;
+
+                    const method = option.dataset.method;
+                    const upiDetails = document.getElementById('upiDetails');
+                    const upiRef = document.getElementById('upiRef');
+                    
+                    if (method === 'online') {
+                        upiDetails.classList.add('active');
+                        upiRef.required = true;
+                    } else {
+                        upiDetails.classList.remove('active');
+                        upiRef.required = false;
+                    }
+                });
+            });
+
+            // Checkout Form
+            document.getElementById('checkoutForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                handleCheckout();
+            });
+
+            // Overlay
+            document.getElementById('overlay').addEventListener('click', () => {
+                document.getElementById('cartDrawer').classList.remove('active');
+                document.getElementById('overlay').classList.remove('active');
+            });
+
+            // Smooth Scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        }
+
+        // Checkout Handler
+        function handleCheckout() {
+            const name = document.getElementById('customerName').value;
+            const phone = document.getElementById('customerPhone').value;
+            const address = document.getElementById('customerAddress').value;
+            const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+            const upiRef = document.getElementById('upiRef').value;
+
+            if (paymentMethod === 'online' && !upiRef) {
+                showToast(currentLang === 'en' ? 'Please enter UTR number' : 'कृपया UTR नंबर दर्ज करें', 'warning');
+                return;
+            }
+
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const discountAmount = subtotal * (discount / 100);
+            const total = subtotal - discountAmount;
+
+            let message = `🛒 *New Order from Nazarana Enterprises*\n\n`;
+            message += `*Customer Details:*\n`;
+            message += `Name: ${name}\n`;
+            message += `Phone: ${phone}\n`;
+            message += `Address: ${address}\n\n`;
+            message += `*Order Items:*\n`;
+            
+            cart.forEach((item, index) => {
+                const name = currentLang === 'en' ? item.nameEn : item.nameHi;
+                const unit = currentLang === 'en' ? item.unit : item.unitHi;
+                message += `${index + 1}. ${name}\n`;
+                message += `   Qty: ${item.quantity} ${unit}\n`;
+                message += `   Price: ₹${item.price.toLocaleString('en-IN')} / ${unit}\n`;
+                message += `   Subtotal: ₹${(item.price * item.quantity).toLocaleString('en-IN')}\n\n`;
+            });
+
+            message += `*Subtotal: ₹${subtotal.toLocaleString('en-IN')}*\n`;
+            if (discount > 0) {
+                message += `*Discount (${promoCode}): −₹${discountAmount.toLocaleString('en-IN')} (${discount}%)*\n`;
+            }
+            message += `*Total Amount: ₹${total.toLocaleString('en-IN')}*\n\n`;
+            message += `*Payment Method:* ${paymentMethod === 'cod' ? 'Cash on Delivery' : 'Online UPI'}\n`;
+            
+            if (paymentMethod === 'online') {
+                message += `*UTR Number:* ${upiRef}\n`;
+            }
+
+            const whatsappUrl = `https://wa.me/918676037228?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+
+            cart = [];
+            discount = 0;
+            promoCode = '';
+            localStorage.removeItem('cart');
+            updateCartUI();
+            document.getElementById('checkoutModal').classList.remove('active');
+            document.getElementById('cartDrawer').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+            
+            showToast(currentLang === 'en' ? 'Order placed! Opening WhatsApp...' : 'ऑर्डर दिया गया! WhatsApp खोला जा रहा है...', 'success');
+            
+            document.getElementById('checkoutForm').reset();
+            document.getElementById('promoInput').value = '';
+            document.querySelector('.payment-option[data-method="cod"]').classList.add('selected');
+            document.getElementById('upiDetails').classList.remove('active');
+        }
+
+        // Toast
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastIcon = document.getElementById('toastIcon');
+
+            toast.className = `toast ${type}`;
+            toastMessage.textContent = message;
+            
+            if (type === 'success') toastIcon.textContent = '✓';
+            else if (type === 'error') toastIcon.textContent = '✕';
+            else if (type === 'warning') toastIcon.textContent = '⚠';
+            else toastIcon.textContent = 'ℹ';
+            
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3500);
+        }
+    </script>
 </body>
 </html>
